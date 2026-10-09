@@ -1,95 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="pt-br">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="style.css">
-    <title>panni pães</title>
+    <title>Panni Pães</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
     <header>
-<h1 id="tituloDpagina">Panni pães</h1>
-<nav>
-<ul>
-    <li><a href="#sobre">sobre</a></li>
-    <li><a href="#contato">contato</a></li>
-    <li><a href="#endereço">endereço</a></li>
-</ul>
-</nav>
+        <div class="cabecalho">
+            <h1 id="tituloDpagina">Panni pães</h1>
+            <nav>
+                <ul id="elementoNav">
+                    <li><a href="#sobre">sobre</a></li>
+                    <li><a href="#contato">contato</a></li>
+                    <li><a href="#endereço">endereço</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-<main>
-<div class="Cardapio">
-<h2>CARDAPIO</h2><br>
+    <main>
+        <section class="topo">
+            <div>
+                <p>Cardápio</p>
+                <h2>Escolha seus produtos</h2>
+                <p>Use as categorias para encontrar os itens com mais facilidade.</p>
+            </div>
+        </section>
 
-<section class="paes">
-<h4>Deliciosos pães</h4>
-    <ul>
-<li>pão carioca</li><p>0,80</p><button>adicionar</button>
-<li>pão de leite</li><p>0,80</p><button>adicionar</button>
-<li>pão de batata</li><p>1,00</p><button>adicionar</button>
-</ul>
-</section>
-<hr>
-<section class="salgados">
-<h4>Deliciosos salgados</h4>
-    <ul>
-  <li>coxinha tradicional</li><p>6,00</p><button>adicionar</button>
-<li>enroladinho</li><p>4,00</p><button>adicionar</button>
-<li>empada de carne do sol</li><p>6,00</p><button>adicionar</button>
-<li>bola mista</li><p>6,00</p><button>adicionar</button>
-</ul>
-</section>
-<hr>
+        <div class="Cardapio">
 
-<section class="pasteis">
-<h4>Deliciosos pasteis</h4>
-    <ul>
-<li>pastel de frango</li><p>10,00</p><button>adicionar</button>
-<li>pastel misto</li><p>10,00</p><button>adicionar</button>
-<li>pastel de queijo</li><p>10,00</p>
-<li>pastel de carne do sol</li><p>14,00</p><button>adicionar</button>
-</ul>
-</section>
-<hr>
-<section class="bolos">
-<h4>Deliciosos bolos</h4>
-<p>fatia do bolo</p>
-<ul>
-<li>bolo de milho</li><p>5,00</p><button>adicionar</button>
-<li>bolo mole</li><p>5,00</p><button>adicionar</button>
-<li>bolo de chocolate</li><p>6,00</p><button>adicionar</button>
-<li>bolo de laranja 5,00</li><p>5,00</p><button>adicionar</button>
-<li>bolo formigueiro</li><p>6,00</p><button>adicionar</button>
-</ul>
-</section>
-<hr>
-<section class="bebidas">
-<h4>bebidas</h4>
-<ul>
-    <li>café 200ml</li><p>3,00</p><button>adicionar</button>
-<li>suco de laranja 300ml</li><p>5,00</p><button>adicionar</button>
-<li>suco de maracuja 300ml</li><p>5,00</p><button>adicionar</button>
-<li>suco de goiaba 300ml</li><p>5,00</p><button>adicionar</button>
-<li>coca lata</li><p>6,00</p><button>adicionar</button>
-<li>sprit lata</li><p>6,00</p><button>adicionar</button>
-</ul>
-</section>
-<hr>
+            <section class="paes">
+                <h4>Deliciosos pães</h4>
+                <ul>
+                    <li>pão carioca</li>
+                    <p>0,80</p><button onclick="adicionar('pão carioca', 0.80)">adicionar</button>
+                    <li>pão de leite</li>
+                    <p>0,80</p><button onclick="adicionar('pão de leite', 0.80)">adicionar</button>
+                    <li>pão de batata</li>
+                    <p>1,00</p><button onclick="adicionar('pão de batata', 1.00)">adicionar</button>
+                </ul>
+            </section>
+            <hr>
+            <section class="salgados">
+                <h4>Deliciosos salgados</h4>
+                <ul>
+                    <li>coxinha tradicional</li>
+                    <p>6,00</p><button onclick="adicionar('coxinha tradicional', 6.00)">adicionar</button>
+                    <li>enroladinho</li>
+                    <p>4,00</p><button onclick="adicionar('enroladinho', 4.00)">adicionar</button>
+                    <li>empada de carne do sol</li>
+                    <p>6,00</p><button onclick="adicionar('emapada de carne do sol', 6.00)">adicionar</button>
+                    <li>bola mista</li>
+                    <p>6,00</p><button onclick="adicionar('bola mista', 6.00)">adicionar</button>
+                </ul>
+            </section>
+            <hr>
 
+            <section class="pasteis">
+                <h4>Deliciosos pasteis</h4>
+                <ul>
+                    <li>pastel de frango</li>
+                    <p>10,00</p><button onclick="adicionar('pastel de frango',)">adicionar</button>
+                    <li>pastel misto</li>
+                    <p>10,00</p><button>adicionar</button>
+                    <li>pastel de queijo</li>
+                    <p>10,00</p>
+                    <li>pastel de carne do sol</li>
+                    <p>14,00</p><button>adicionar</button>
+                </ul>
+            </section>
+            <hr>
+            <section class="bolos">
+                <h4>Deliciosos bolos</h4>
+                <p>fatia do bolo</p>
+                <ul>
+                    <li>bolo de milho</li>
+                    <p>5,00</p><button>adicionar</button>
+                    <li>bolo mole</li>
+                    <p>5,00</p><button>adicionar</button>
+                    <li>bolo de chocolate</li>
+                    <p>6,00</p><button>adicionar</button>
+                    <li>bolo de laranja 5,00</li>
+                    <p>5,00</p><button>adicionar</button>
+                    <li>bolo formigueiro</li>
+                    <p>6,00</p><button>adicionar</button>
+                </ul>
+            </section>
+            <hr>
+            <section class="bebidas">
+                <h4>bebidas</h4>
+                <ul>
+                    <li>café 200ml</li>
+                    <p>3,00</p><button>adicionar</button>
+                    <li>suco de laranja 300ml</li>
+                    <p>5,00</p><button>adicionar</button>
+                    <li>suco de maracuja 300ml</li>
+                    <p>5,00</p><button>adicionar</button>
+                    <li>suco de goiaba 300ml</li>
+                    <p>5,00</p><button>adicionar</button>
+                    <li>coca lata</li>
+                    <p>6,00</p><button>adicionar</button>
+                    <li>sprit lata</li>
+                    <p>6,00</p><button>adicionar</button>
+                </ul>
+            </section>
+            <hr>
 
+        </div>
+        <hr>
+        <section class="carrinho">
+            <h2>meu carrinho</h2>
+            <ul id="carrinho">
 
-</div>
+            </ul>
 
+            <p>Total: R$ <span id="total">0,00
 
+                </span>
 
-</main>
+            </p>
 
-<footer>
-    
-</footer>
+        </section>
 
+    </main>
 
+    <footer>
+
+    </footer>
+
+    <script src="SCRIPT.JS"></script>
 
 </body>
+
 </html>
