@@ -105,6 +105,17 @@ main {
   box-sizing: border-box;
 }
 
+.topo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  .botoes-categoria {
+    display: flex;
+  }
+}
+
 #elementoNav {
     margin: 30px;
     display: flex;
