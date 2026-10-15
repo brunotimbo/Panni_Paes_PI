@@ -169,6 +169,32 @@ function renderizarProdutos() {
 
     listaProdutosElemento.innerHTML = "";
 
+    if (categoriaAtual === "Todos") {
+        const produtosFiltrados = produtos;
+
+    } else {
+
+        produtos.filter(function(produto){
+            return produto.categoria === "categoriaAtual";
+        })
+    }
+
+    produtosFiltrados.forEach(function(produto){
+        
+        const artigo = document.createElement("article");
+        artigo.className = "produto-card";
+        artigo.innerHTML = `
+        
+            <div class="produto-imagem" aria-hidden="true"> ${produto.icone} </div>
+            <div class="produto-conteudo">
+                <p class="produto-categoria"> ${produto.categoria} </p>
+                <h3> ${produto.nome} </h3>
+                <p class="produto-descricao"> ${produto.descricao} </p>
+                <div class="produto-rodape">
+                    <span class="produto-preco"> ${formatarMoeda(produto.preco)} </span> 
+
+        `
+    })
 }
 
 //-------------------------
