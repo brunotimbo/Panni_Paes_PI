@@ -114,7 +114,7 @@ const categorias = [
     "Salgados",
     "Frios",
     "Doces",
-    "Bebidas",
+    "Bebidas"
 ]
 
 //----------------------------------
@@ -149,38 +149,38 @@ function renderizarCategorias() {
         if (categoria === categoriaAtual) {
             botao.classList.add("ativa")
         }
-        
-        botao.addEventListener("click", function(){
+
+        botao.addEventListener("click", function () {
             categoriaAtual = categoria;
             renderizarCategorias();
             renderizarProdutos();
         })
 
         categoriasElemento.appendChild(botao)
-    
+
     });
 }
+
+function formatarMoeda() { }
 
 //-------------------------
 //produtos
 //-------------------------
-
 function renderizarProdutos() {
 
     listaProdutosElemento.innerHTML = "";
-
     if (categoriaAtual === "Todos") {
-        const produtosFiltrados = produtos;
+        produtosFiltrados = produtos;
 
     } else {
 
-        produtos.filter(function(produto){
+        produtos.filter(function (produto) {
             return produto.categoria === "categoriaAtual";
         })
     }
 
-    produtosFiltrados.forEach(function(produto){
-        
+    produtosFiltrados.forEach(function (produto) {
+
         const artigo = document.createElement("article");
         artigo.className = "produto-card";
         artigo.innerHTML = `
@@ -192,9 +192,25 @@ function renderizarProdutos() {
                 <p class="produto-descricao"> ${produto.descricao} </p>
                 <div class="produto-rodape">
                     <span class="produto-preco"> ${formatarMoeda(produto.preco)} </span> 
-
+                    <button class="produto-adicionar" type="button" data-id="${produto.id}"> Adicionar </button>
+                </div>
+            </div>
         `
-    })
+        listaProdutosElemento.appendChild(artigo);
+    });
+
+    const botoesAdicionar = document.querySelectorAll(".produto-adicionar")
+
+    botoesAdicionar.forEach(
+        function (botao) {
+            botao.addEventListener("click",
+                function () {
+                    const id = Number(botao.dataset.id);
+                    selecionarProduto(id);
+                }
+            )
+        }
+    )
 }
 
 //-------------------------
@@ -206,11 +222,11 @@ renderizarProdutos();
 
 let total = 0;
 
-function adicionar(nome, preco){
+function adicionar(nome, preco) {
     let carrinho = document.getElementById("carrinho");
     let produto = document.createElement("li");
     produto.textContent = nome + " - R$" + preco.toFixed(2);
     carrinho.appendChild(produto);
     total = total + preco;
-    document.getElementById("total").textContent = total.toFixed(2).replace(".",",");
+    document.getElementById("total").textContent = total.toFixed(2).replace(".", ",");
 }
